@@ -1,19 +1,37 @@
+from __future__ import print_function
+
 class Solution(object):
-    def reverseVowels(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
-        VOWELS = ('a', 'e', 'i', 'o', 'u')
-        size = len(s)
-        left, right = 0, size - 1
-        ls = list(s)
+
+    def reverseVowel(self, s):
+
+        result = []
+        left, right = 0, len(s)-1
+
+
+        VOWELS = ['a', 'e', 'i', 'o', 'u']
+
         while True:
-            while left < size and s[left].lower() not in VOWELS:
+
+            if s[left].lower() not in VOWELS and left < len(s):
                 left += 1
-            while right >= 0 and s[right].lower() not in VOWELS:
+            if s[right].lower() not in VOWELS and right >=0:
                 right -= 1
-            if left >= right: break
-            ls[left], ls[right] = ls[right], ls[left]
-            left, right = left + 1, right - 1:
-        return ''.join(ls)
+
+            if left > right:
+                break
+
+            s[left], s[right] = s[right], s[left]
+            left, right = left + 1, right - 1
+
+        return ''.join(s)
+
+
+reversevowel = Solution()
+s = list("aeiou")
+print(reversevowel.reverseVowel(s))
+
+
+
+
+
+
