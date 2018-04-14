@@ -23,5 +23,4 @@ car = 1
 print (car>>2)
 """
 
-this is  a test
 
