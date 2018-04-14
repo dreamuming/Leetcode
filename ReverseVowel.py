@@ -15,5 +15,5 @@ class Solution(object):
                 right -= 1
             if left >= right: break
             ls[left], ls[right] = ls[right], ls[left]
-            left, right = left + 1, right - 1
+            left, right = left + 1, right - 1:
         return ''.join(ls)
